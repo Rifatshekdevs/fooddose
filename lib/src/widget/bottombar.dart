@@ -1,6 +1,8 @@
-import 'package:dosse/src/components/favorite_page.dart';
-import 'package:dosse/src/components/offer_page.dart';
+
 import 'package:dosse/src/config/ktext.dart';
+import 'package:dosse/src/pages/favorite_page.dart';
+import 'package:dosse/src/pages/offer_page.dart';
+
 import 'package:dosse/src/pages/home_page.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';

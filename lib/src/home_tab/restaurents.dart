@@ -1,4 +1,5 @@
 import 'package:dosse/src/config/ktext.dart';
+import 'package:dosse/src/pages/details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,28 +9,31 @@ class Restaurents extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = Get.size;
     return Container(
-      color: Colors.grey[300],
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              height:Get.height,
-              child: ListView.separated(
-                shrinkWrap: true,
-                primary: false,
-                itemCount: 5,
-                separatorBuilder: (context ,index)=> SizedBox(height: 5,),
-                itemBuilder: (context, index){
-                  return Container(
-                margin: EdgeInsets.all( 10),
-                height: 300,
-                width: double.infinity,
-                decoration: BoxDecoration(
+      
+      child: Column(
+        children: [
+          Container(
+            height: Get.height,
+            child: ListView.separated(
+              shrinkWrap: true,
+              primary: false,
+              itemCount: 5,
+              separatorBuilder: (context ,index)=> SizedBox(height: 5,),
+              itemBuilder: (context, index){
+                return GestureDetector(
+                  onTap: (){
+                    Get.to(DetailsPage());
+                  },
+                  child: Container(
+                                margin: EdgeInsets.all( 10),
+                                height: 300,
+                                width: double.infinity,
+                                decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
-                ),
-                child: Column(
-                children: [
+                                ),
+                                child: Column(
+                                children: [
                   ClipRRect(
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
                     child: Container(
@@ -58,7 +62,7 @@ class Restaurents extends StatelessWidget {
                       ),
                   ),
                   SizedBox(height: 20,),
-      
+                      
                   Padding(
                     padding:  EdgeInsets.symmetric(horizontal: 10),
                     child: Row(
@@ -72,7 +76,7 @@ class Restaurents extends StatelessWidget {
                               color: Colors.white,
                               image: DecorationImage(image: AssetImage('assets/kabab.jpg'),fit: BoxFit.cover),
                             ),
-
+                
                           ),
                         ),
                         SizedBox(width: 10,),
@@ -100,7 +104,7 @@ class Restaurents extends StatelessWidget {
                       ],
                     ),
                   ),
-
+                
                   Padding(
                     padding:  EdgeInsets.only(left: size.width*0.15),
                     child: Row(
@@ -114,19 +118,19 @@ class Restaurents extends StatelessWidget {
                       KText(text: 'TK.29'),
                     ], 
                     ),
-                  )
-      
-      
-                ],
-                ),
-              );
-                }, 
-                
-                ),
-            ),
+                  ),
+                      
+                      
+                                ],
+                                ),
+                              ),
+                );
+              }, 
+              
+              ),
+          ),
 
-          ],
-        ),
+        ],
       ),
     );
   }
