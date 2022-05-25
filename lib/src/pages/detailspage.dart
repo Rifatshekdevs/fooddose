@@ -1,4 +1,6 @@
+import 'package:dosse/src/model/listmodel.dart';
 import 'package:flutter/material.dart';
+
 
 
 class DetailsPage extends StatefulWidget {
@@ -11,6 +13,63 @@ class DetailsPage extends StatefulWidget {
 class _DetailsPageState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
+     List<ListModel>listview=[
+      ListModel(
+      
+        Image: 'assets/images/image1.jpg',
+        text1: 'Blaze Pizza',
+        text2: 'Pizza Amarican, italian',
+        text3: 'Very Good',
+        text4: '30 Mins',
+        text5: 'KD 0.500',
+        
+      ),
+       ListModel(
+        Image: 'assets/images/image1.jpg',
+        text1: 'Blaze Pizza',
+        text2: 'Pizza Amarican, italian',
+        text3: 'Very Good',
+        text4: '30 Mins',
+        text5: 'KD 0.500',
+       
+      ),
+       ListModel(
+        Image: 'assets/images/image1.jpg',
+        text1: 'Blaze Pizza',
+        text2: 'Pizza Amarican, italian',
+        text3: 'Very Good',
+        text4: '30 Mins',
+        text5: 'KD 0.500',
+        
+      ),
+       ListModel(
+        Image: 'assets/images/image1.jpg',
+        text1: 'Blaze Pizza',
+        text2: 'Pizza Amarican, italian',
+        text3: 'Very Good',
+        text4: '30 Mins',
+        text5: 'KD 0.500',
+       
+      ),
+       ListModel(
+        Image: 'assets/images/image1.jpg',
+        text1: 'Blaze Pizza',
+        text2: 'Pizza Amarican, italian',
+        text3: 'Very Good',
+        text4: '30 Mins',
+        text5: 'KD 0.500',
+        
+      ),
+       ListModel(
+        Image: 'assets/images/image1.jpg',
+        text1: 'Blaze Pizza',
+        text2: 'Pizza Amarican, italian',
+        text3: 'Very Good',
+        text4: '30 Mins',
+        text5: 'KD 0.500',
+        
+      ),
+    ];
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,113 +130,97 @@ class _DetailsPageState extends State<DetailsPage> {
       
                ],
              ),
-              Column(
-                children: [
-                  List_view(),
-                  List_view(),
-                  List_view(),
-                  List_view(),
-                  List_view(),
-                  List_view(),
-                  List_view(),
-                  List_view(),
-                  List_view(),
-                ],
-              )
-            
-      
-                 ]
-          ),
-      )
-    );
-  }
-}
-
-class List_view extends StatelessWidget {
-  const List_view({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
+         Container(
+           height: 500,
+           child: ListView.builder(
+       itemCount: listview.length,
+       itemBuilder: (context,index){
+           return Container(
         margin: EdgeInsets.only(left: 20,right: 20),
         height: 120,
         width: double.infinity,
        
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-           color: Colors.white70,
-          boxShadow: [
+            borderRadius: BorderRadius.circular(10),
+             color: Colors.white70,
+            boxShadow: [
        BoxShadow(
-          color: Colors.grey,
-          offset: const Offset(
-            0.0,
-            0.0,
-          ),
-          blurRadius: 0.0,
-          spreadRadius: 0.0,
+            color: Colors.grey,
+            offset: const Offset(
+              0.0,
+              0.0,
+            ),
+            blurRadius: 0.0,
+            spreadRadius: 0.0,
         ), 
         BoxShadow(
-          color: Colors.white,
-          offset: const Offset(0.0, 0.0),
-          blurRadius: 0.0,
-          spreadRadius: 0.0,
+            color: Colors.white,
+            offset: const Offset(0.0, 0.0),
+            blurRadius: 0.0,
+            spreadRadius: 0.0,
         ), 
       
       ],   
        ),
         child: Row(
-          children: [SizedBox(width: 10,),
-            Image.asset('assets/images/image1.jpg',height: 80,width: 80,),
-            SizedBox(width: 10,),
-            Container(padding: EdgeInsets.only(top:15),
+            children: [SizedBox(width: 10,),
+              Image.asset('${listview.elementAt(index).Image!}',height: 80,width: 80,),
+              SizedBox(width: 10,),
+              Container(padding: EdgeInsets.only(top:15),
     child: Column(crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Text('Blaze Pizza',
+      Text('${listview.elementAt(index).text1!}',
       style: TextStyle(
         fontSize: 15,fontFamily: 'solaimanlipi'
       ),),
       SizedBox(height: 10,),
-      Text('Pizza American, italian', style: TextStyle(
+      Text('${listview.elementAt(index).text2!}', style: TextStyle(
         fontSize: 10,color: Color(0xFF660000)
       ),),
       SizedBox(height: 10,),
       Row(
         children: [
-          Icon(Icons.sentiment_satisfied_alt,size: 20,),
-          SizedBox(width: 5,),
-          Text('Very Good', style: TextStyle(
-            fontSize: 10,color: Color(0xFF660000)
-          ),),
+            Icon(Icons.sentiment_satisfied_alt,size: 20,),
+            SizedBox(width: 5,),
+            Text('${listview.elementAt(index).text3!}', style: TextStyle(
+              fontSize: 10,color: Color(0xFF660000)
+            ),),
         ],
       ),
        SizedBox(height: 10,),
       Row(
         children: [
-          Icon(Icons.watch_later_outlined,size: 20,),
-          SizedBox(width: 5,),
-          Text('30 mins', style: TextStyle(
-            fontSize: 12,color: Color(0xFF660000)
-          ),),
-          SizedBox(width: 50,),
-           Icon(Icons.delivery_dining_sharp,size: 20,),
-          SizedBox(width: 5,),
-          Text('KD 0.500', style: TextStyle(
-            fontSize: 12,color: Color(0xFF660000)
-          ),),
+            Icon(Icons.watch_later_outlined,size: 20,),
+            SizedBox(width: 5,),
+            Text('${listview.elementAt(index).text4!}', style: TextStyle(
+              fontSize: 12,color: Color(0xFF660000)
+            ),),
+            SizedBox(width: 50,),
+             Icon(Icons.delivery_dining_sharp,size: 20,),
+            SizedBox(width: 5,),
+            Text('${listview.elementAt(index).text5!}', style: TextStyle(
+              fontSize: 12,color: Color(0xFF660000)
+            ),),
         ],
       )
     ],
     ),
-            )
-          ],
+              )
+            ],
         ),
       );
+       }
+       ),
+         ),
+            
+      
+                 ]
+          ),
+          
+      )
+    );
   }
 }
-
-
 
 
 
@@ -244,121 +287,4 @@ class SliderImage extends StatelessWidget {
       ],
     );
   }
-}
-
-
-
-class Deshboard extends StatelessWidget {
-  const Deshboard({
-    Key? key,required this.image,required this.title,required this.subtitle,required this.press,
-   
-  }) : super(key: key);
-  final String image;
-  final String title;
-  final String subtitle;
-  final VoidCallback press;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: press,
-      child: Container(
-        margin: EdgeInsets.only(left: 30,right: 30),
-        height: 100,
-        width: double.infinity,
-       
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-           color: Colors.white70,
-          boxShadow: [
-                   BoxShadow(
-                      color: Colors.grey,
-                      offset: const Offset(
-                        0.0,
-                        0.0,
-                      ),
-                      blurRadius: 2.0,
-                      spreadRadius: 0.0,
-                    ), 
-                    BoxShadow(
-                      color: Colors.white,
-                      offset: const Offset(0.0, 0.0),
-                      blurRadius: 0.0,
-                      spreadRadius: 0.0,
-                    ), 
-                  
-                  ],   
-                   ),
-        child: Row(
-          children: [SizedBox(width: 10,),
-            Image.asset(image,height: 80,width: 80,),
-            SizedBox(width: 10,),
-            Container(padding: EdgeInsets.only(top:15),
-              child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(title,
-                  style: TextStyle(
-                    fontSize: 15,fontFamily: 'solaimanlipi'
-                  ),),
-                  SizedBox(height: 5,),
-                  Text(subtitle, style: TextStyle(
-                    fontSize: 15,color: Color(0xFF660000)
-                  ),)
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-// class Catagory extends StatelessWidget {
-  
-//   const Catagory({
-//     Key? key, required this.title,required this.image,required this.press,
-//   }) : super(key: key);
-//   final String title;
-//   final String image;
-//  final VoidCallback press;
-
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       height: 200,
-//       width: 200,
-//       decoration: BoxDecoration(
-//         color: Colors.orange,
-//         borderRadius: BorderRadius.circular(10)
-//       ),
-//     );
-//   }
-// }
-
-Widget _selectedExtras({ required String image,required String name,
-  final  VoidCallback? press
-  }){
-
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      GestureDetector(
-        onTap: press,
-        child: Container(margin: EdgeInsets.only(left: 10,right: 10),
-          height: 50,
-          decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage(image))
-          ),
-          
-        ),
-      ),
-      SizedBox(height: 10,),
-      Container(
-        margin: EdgeInsets.only(left: 25,right: 10),
-        child: Text(name, style: TextStyle(fontSize: 12,fontFamily: 'solaimanlipi'),))
-    ],
-  );
 }
