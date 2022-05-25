@@ -11,9 +11,10 @@ class LocationPage extends StatelessWidget {
     final Size size = Get.size;
 
     return Scaffold(
+      
       body: Column(
         children: [
-          SizedBox(height: size.height*0.10,),
+          SizedBox(height: size.height*0.08,),
           Container(
                       alignment: Alignment.center,
                       margin: EdgeInsets.only(left: 20, right: 20, top: 20),
@@ -45,7 +46,7 @@ class LocationPage extends StatelessWidget {
                       ),
                     ),
                     
-                    SizedBox(height: size.height*0.70,),
+                    SizedBox(height: size.height*0.65,),
         SizedBox(
           height: 50,
           width: size.width*0.90,

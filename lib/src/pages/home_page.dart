@@ -1,9 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dosse/src/config/ktext.dart';
-import 'package:dosse/src/home_tab/restaurents.dart';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+class _HomePageState extends State<HomePage> {
   int selectedIndex = 0;
   int _current = 0;
 
@@ -23,98 +23,49 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-        TabController _tabController =TabController(length: 3, vsync: this);
+  
 
     final Size size = Get.size;
     return Scaffold(
+      backgroundColor:Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(125),
-        child: Column(
-          children: [
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            Row(
+        preferredSize: Size.fromHeight(
+          75,
+        ),
+        child: Container(
+          color: Colors.white,
+          child: Padding(
+            padding: EdgeInsets.only(left: 15),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                IconButton(
-                  icon: Icon(
-                    Icons.location_on_outlined,
-                    color: Color(0xffF5591F),
-                    size: 30,
-                  ),
-                  onPressed: () {},
+                SizedBox(
+                  height: 30,
                 ),
-                Container(
-                    width: size.width * 0.75,
-                    child: KText(
-                      text: 'Kearaniganj, ramerkanda..',
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black,
-                    )),
-                IconButton(
-                  icon: Icon(
-                    Icons.person_outline,
-                    color: Colors.grey,
-                    size: 30,
-                  ),
-                  onPressed: () {},
+                KText(text: 'Delivering to'),
+                Row(
+                  children: [
+                    Container(
+                      child: KText(
+                        text: 'Kearaniganj, ramerkanda..',
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black,
+                      ),
+                    ),
+                    IconButton(
+                      icon: Icon(
+                        Icons.expand_more_outlined,
+                        color: Colors.grey,
+                        size: 30,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ],
                 ),
               ],
             ),
-            Divider(
-              color: Colors.grey[450],
-              thickness: 0.5,
-            ),
-            Row(
-              children: [
-                Container(
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                  ),
-                  padding: EdgeInsets.only(
-                    left: 5,
-                  ),
-                  height: 50,
-                  width: size.width * 0.75,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    border: Border.all(color: Colors.grey, width: 1.5),
-                  ),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      icon: Icon(EvaIcons.search, color: Colors.grey),
-                      hintText: "search for dishes,resturants and shop",
-                      hintStyle: TextStyle(fontSize: 13),
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey, width: 1.5),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.tune_outlined,
-                      color: Colors.black,
-                      size: 30,
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-              ],
-            ),
-            Divider(
-              color: Colors.grey[450],
-              thickness: 0.5,
-            ),
-          ],
+          ),
         ),
       ),
       body: SingleChildScrollView(
@@ -122,6 +73,79 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Container(
+              height: 150,
+              width: double.infinity,
+              decoration: BoxDecoration(
+            
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: KText(
+                      text: 'Hey there!',
+                      fontSize: 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 15),
+                        child: Container(
+                          width: size.width * 0.60,
+                          child: KText(
+                            text:
+                                'Log in or create an account for a faster ordering experience',
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                      Image.asset(
+                        'assets/logo.png',
+                        width: 100,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: HexColor('#FE5B00'),
+                        ),
+                        onPressed: () {},
+                        child: KText(
+                          text: 'Log In',
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        )),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 15),
+              child: KText(
+                text: 'Hey good evening',
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
             SizedBox(
               width: 450,
               child: CarouselSlider.builder(
@@ -143,120 +167,125 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 },
               ),
             ),
-            Divider(
-              color: Colors.grey[450],
-              thickness: 0.5,
-            ),
-            Container(
-              height: 100,
-              child: ListView.separated(
-                shrinkWrap: true,
-                primary: false,
-                scrollDirection: Axis.horizontal,
-                itemCount: 8,
-                separatorBuilder: (BuildContext context, index) => SizedBox(
-                  width: 8,
-                ),
-                itemBuilder: (context, index) {
-                  return Container(
-                    margin: EdgeInsets.only(left: 15),
-                    height: 100,
-                    width: 170,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/carousel/img.jpg'),
-                        fit: BoxFit.fill,
+            Padding(
+              padding: EdgeInsets.only(left: 15),
+              child: Container(
+                height: 80,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 2,
+                  separatorBuilder: (context, index) => SizedBox(
+                    width: 10,
+                  ),
+                  itemBuilder: (context, index) {
+                    return Container(
+                      height: 80,
+                      padding: EdgeInsets.symmetric(horizontal: 15),
+                      width: size.width * 0.45,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Stack(children: [
-                      Positioned(
-                        left: size.width * 0.18,
-                        top: 5,
-                        child: Container(
-                          height: 30,
-                          width: size.width * 0.20,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(50),
+                      child: Row(
+                        children: [
+                          KText(
+                            text: 'Food',
+                            fontSize: 16,
                           ),
-                          child: Center(
-                              child: KText(
-                            text: '30 days 0:8',
-                            fontSize: 12,
-                          )),
-                        ),
+                          Image.asset(
+                            'assets/burger.png',
+                            width: 100,
+                          ),
+                        ],
                       ),
-                      Positioned(
-                        top: size.height * 0.06,
-                        child: Container(
-                            height: 40,
-                            width: size.width * 0.15,
-                            decoration: BoxDecoration(
-                              color: Color(0xffF5591F),
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(50),
-                                  bottomRight: Radius.circular(50)),
-                            ),
-                            child: Row(
-                              children: [
-                                KText(
-                                  text: '10',
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 25,
-                                ),
-                                KText(
-                                  text: '%\nOFF',
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                ),
-                              ],
-                            )),
-                      ),
-                    ]),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
             ),
-            Divider(
-              color: Colors.grey[450],
-              thickness: 0.5,
+            SizedBox(
+              height: 8,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: TabBar(
-                controller: _tabController,
-                  indicatorColor: Color(0xffF5591F),
-                  labelColor: Color(0xffF5591F),
-                  unselectedLabelColor: Colors.black,
-                  tabs: [
-                    Tab(
-                      child: KText(text: 'Restaurants'),
-                    ),
-                    Tab(
-                      child: KText(text: 'Home Food'),
-                    ),
-                    Tab(
-                      child: KText(text: 'Groceries'),
-                    ),
-                  ]),
+              padding:  EdgeInsets.only(left: 15),
+              child: Container(
+                height: 120,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                  separatorBuilder: (context, index) => SizedBox(width: 5,),
+                  itemBuilder: (context,index){
+                    return Container(
+                      height: 120,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 70,
+                            decoration: BoxDecoration(
+                              color: Colors.grey[200],
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Center(child: Image.asset('assets/burger.png',width: 80,)),
+                          ),
+                          SizedBox(height: 10,),
+                          KText(text: 'Food',fontWeight: FontWeight.bold,color: Colors.black,),
+
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              ),
             ),
-            SizedBox(
-              height: 15,
-            ),
-            Container(
-              height: Get.height,
-              child: TabBarView(
-                controller: _tabController,
-                children: [
-                Restaurents(),
-                Restaurents(),
-                Restaurents(),
-              ]),
-            )
+          Padding(
+            padding:  EdgeInsets.only(left: 15),
+            child: KText(text: 'Top Restaurents',color: Colors.black,fontWeight: FontWeight.bold,fontSize: 18,),
+          ),
+          SizedBox(height: 10,),
+        Padding(
+padding:  EdgeInsets.only(left: 15,bottom: 20),          child: Container(
+            height: 170,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              itemCount: 5,
+              separatorBuilder: (context,index)=>SizedBox(width: 5,),
+              itemBuilder: (context,index){
+                return   Container(
+                  height: 170,
+                  width: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 80,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey),
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: Center(child: Image.asset('assets/res.png',width: 70,),),
+                      ),
+                      SizedBox(height: 10,),
+                    KText(text: 'Rising Can,s',fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black,),
+                    Row(
+                      children: [
+                        Icon(Icons.lock_clock,color: Colors.grey,size: 15,),
+                        KText(text: '36 mins')
+                      ],
+                    )
+                    ],
+                  ),
+                );
+              }, 
+              
+              ),
+          ),
+        )
           ],
         ),
       ),
