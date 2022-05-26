@@ -16,7 +16,7 @@ class _DetailsPageState extends State<DetailsPage> {
      List<ListModel>listview=[
       ListModel(
       
-        Image: 'assets/images/image1.jpg',
+        Image: 'assets\burger.png',
         text1: 'Blaze Pizza',
         text2: 'Pizza Amarican, italian',
         text3: 'Very Good',
@@ -25,7 +25,7 @@ class _DetailsPageState extends State<DetailsPage> {
         
       ),
        ListModel(
-        Image: 'assets/images/image1.jpg',
+        Image: 'assets\burger.png',
         text1: 'Blaze Pizza',
         text2: 'Pizza Amarican, italian',
         text3: 'Very Good',
@@ -34,7 +34,7 @@ class _DetailsPageState extends State<DetailsPage> {
        
       ),
        ListModel(
-        Image: 'assets/images/image1.jpg',
+        Image: 'assets\burger.png',
         text1: 'Blaze Pizza',
         text2: 'Pizza Amarican, italian',
         text3: 'Very Good',
@@ -43,7 +43,7 @@ class _DetailsPageState extends State<DetailsPage> {
         
       ),
        ListModel(
-        Image: 'assets/images/image1.jpg',
+        Image: 'assets\burger.png',
         text1: 'Blaze Pizza',
         text2: 'Pizza Amarican, italian',
         text3: 'Very Good',
@@ -52,7 +52,7 @@ class _DetailsPageState extends State<DetailsPage> {
        
       ),
        ListModel(
-        Image: 'assets/images/image1.jpg',
+        Image: 'assets\burger.png',
         text1: 'Blaze Pizza',
         text2: 'Pizza Amarican, italian',
         text3: 'Very Good',
@@ -61,7 +61,7 @@ class _DetailsPageState extends State<DetailsPage> {
         
       ),
        ListModel(
-        Image: 'assets/images/image1.jpg',
+        Image: 'assets\burger.png',
         text1: 'Blaze Pizza',
         text2: 'Pizza Amarican, italian',
         text3: 'Very Good',
@@ -171,7 +171,7 @@ class _DetailsPageState extends State<DetailsPage> {
     children: [
       Text('${listview.elementAt(index).text1!}',
       style: TextStyle(
-        fontSize: 15,fontFamily: 'solaimanlipi'
+        fontSize: 15,
       ),),
       SizedBox(height: 10,),
       Text('${listview.elementAt(index).text2!}', style: TextStyle(
