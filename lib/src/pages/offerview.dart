@@ -1,8 +1,11 @@
+// ignore_for_file: non_constant_identifier_names
+
+import 'package:dosse/src/config/ktext.dart';
 import 'package:dosse/src/model/listmodel.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class OfferView extends StatefulWidget {
-  const OfferView({Key? key}) : super(key: key);
 
   @override
   State<OfferView> createState() => _OfferViewState();
@@ -75,17 +78,22 @@ class _OfferViewState extends State<OfferView> {
       
     ];
    return Scaffold(
+            backgroundColor: Colors.white,
+
+     appBar: AppBar(
+       backgroundColor: Colors.white,
+       elevation: 0,
+       leading: IconButton(onPressed: (){
+      Get.back();
+       }, icon: Icon(Icons.arrow_back,size: 30,color: Colors.black,)),
+       centerTitle: true,
+       title: KText(text: 'Offers',color: Colors.black,fontSize:18,fontWeight: FontWeight.bold,)
+     ),
      body: SingleChildScrollView(
-       child: Column(
-         children: [
-           Padding(
-             padding: const EdgeInsets.only(top: 50),
-             child: Text('Offers',style: TextStyle(
-               fontSize: 20,fontWeight: FontWeight.bold
-             ),),
-           ),
-           Container(height: 850,
-             child: ListView.builder(
+       child: Container(
+         height: 850,
+             child: ListView.separated(
+               separatorBuilder: (context, index) => Divider(color: Colors.grey.withOpacity(.3),thickness: .5,),
                itemCount: OfferView.length,
                itemBuilder: (context,index){
                  return Container(
@@ -94,30 +102,19 @@ class _OfferViewState extends State<OfferView> {
                 width: double.infinity,
                
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                   color: Colors.white70,
-                  boxShadow: [
-               BoxShadow(
-                  color: Colors.grey,
-                  offset: const Offset(
-                    0.0,
-                    0.0,
-                  ),
-                  blurRadius: 0.0,
-                  spreadRadius: 0.0,
-                ), 
-                BoxShadow(
-                  color: Colors.white,
-                  offset: const Offset(0.0, 0.0),
-                  blurRadius: 0.0,
-                  spreadRadius: 0.0,
-                ), 
+               
               
-              ],   
                ),
                 child: Row(
                   children: [SizedBox(width: 10,),
-                    Image.asset('${OfferView.elementAt(index).image!}',height: 80,width: 80,),
+                    Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey.withOpacity(.3),width: 0.5),
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                      child: Image.asset('${OfferView.elementAt(index).image!}',height: 80,width: 80,)),
                     SizedBox(width: 10,),
                     Container(padding: EdgeInsets.only(top:15),
          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
@@ -147,11 +144,11 @@ class _OfferViewState extends State<OfferView> {
                ),
            ),
            
-         ],
+    
        ),
-     ),
+     );
 
 
-   );
+  
   }
 }

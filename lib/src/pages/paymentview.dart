@@ -17,11 +17,12 @@ class _PaymentPageState extends State<PaymentPage> {
       body: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(height: 15,),
           Container(
-            height: 350,
+            height: 250,
             width: double.infinity,
             decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage('assets/burger.png'),fit: BoxFit.cover)
+              image: DecorationImage(image: AssetImage('assets/burger.png'),fit: BoxFit.fill)
             ),
           ),
           SizedBox(height: 10,),

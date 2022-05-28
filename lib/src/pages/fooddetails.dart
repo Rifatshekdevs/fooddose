@@ -1,5 +1,7 @@
 import 'package:dosse/src/model/listmodel.dart';
+import 'package:dosse/src/pages/paymentview.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class FoodDetails extends StatefulWidget {
@@ -35,7 +37,9 @@ class _FoodDetailsState extends State<FoodDetails> {
                   margin: EdgeInsets.only(bottom: 120,left: 10,right: 10),
                   child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(Icons.arrow_back,size: 30,),
+                      IconButton(icon:Icon(Icons.arrow_back,size: 30,),onPressed: (){
+                        Get.back();
+                      },),
                   
                     ],
                   ),
@@ -206,48 +210,60 @@ class _MostSellingState extends State<MostSelling> {
       
     ];
     return Scaffold(
-      body:  Container(
-               height: 500,
-               child: ListView.builder(
-           itemCount: listview.length,
-           itemBuilder: (context,index){
-               return Container(
-            margin: EdgeInsets.only(left: 20,right: 20),
-            height: 120,
-            width: double.infinity,
-           
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                 color: Colors.white70,
-          //         
-           ),
-            child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [               
-                  Container(
-                    padding: EdgeInsets.only(top:15,left: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-          Text('${listview.elementAt(index).text1!}',
-          style: TextStyle(fontSize: 15,),),
-          SizedBox(height: 10,),
-          Text('${listview.elementAt(index).text2!}',
-          style: TextStyle(fontSize: 12,),),
-           SizedBox(height: 10,),
-          Text('${listview.elementAt(index).text3!}', 
-          style: TextStyle(fontSize: 15),),    
-            ],
-            ),    
-            ),
-          Container(margin: EdgeInsets.only(right: 20),
-            child: Image.asset('${listview.elementAt(index).image!}',height: 100,width: 100,)
-            ),
-                ],
-            ),
-          );
-           }
-           ),
+      body: SingleChildScrollView (
+        child: Container(
+                 height: Get.height,
+                 child: ListView.separated(
+                   separatorBuilder: (context, index) => SizedBox(height:5),
+                   shrinkWrap: true,
+                   primary: false,
+                   
+                   scrollDirection: Axis.vertical,
+             itemCount: listview.length,
+             itemBuilder: (context,index){
+                 return  GestureDetector(
+                   onTap: (){
+                     Get.to(PaymentPage());
+                   },
+                   child: Container(
+                               margin: EdgeInsets.only(left: 20,right: 20),
+                               height: 120,
+                               width: double.infinity,
+                              
+                               decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                     color: Colors.white70,
+                             //         
+                              ),
+                               child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [               
+                      Container(
+                        padding: EdgeInsets.only(top:15,left: 20),
+                               child: Column(
+                                 crossAxisAlignment: CrossAxisAlignment.start,
+                               children: [
+                             Text('${listview.elementAt(index).text1!}',
+                             style: TextStyle(fontSize: 15,),),
+                             SizedBox(height: 10,),
+                             Text('${listview.elementAt(index).text2!}',
+                             style: TextStyle(fontSize: 12,),),
+                              SizedBox(height: 10,),
+                             Text('${listview.elementAt(index).text3!}', 
+                             style: TextStyle(fontSize: 15),),    
+                               ],
+                               ),    
+                               ),
+                             Container(margin: EdgeInsets.only(right: 20),
+                               child: Image.asset('${listview.elementAt(index).image!}',height: 100,width: 100,)
+                               ),
+                    ],
+                               ),
+                             ),
+                 );
+             }
              ),
+               ),
+      ),
 
     );
     

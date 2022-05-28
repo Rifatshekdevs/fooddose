@@ -1,6 +1,7 @@
 
 
 import 'package:dosse/src/config/ktext.dart';
+import 'package:dosse/src/pages/offerview.dart';
 import 'package:dosse/src/pages/setting_page.dart';
 import 'package:dosse/src/widget/custom_leading.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
@@ -53,7 +54,7 @@ class AccountPage extends StatelessWidget {
         body: Column(
         children: [
         customLeading(icon: Icon(Icons.list_alt_outlined,color: Colors.black,), text: 'Your orders'),
-        customLeading(icon: Icon(Icons.local_offer_outlined,color: Colors.black,), text: 'Offers'),
+        customLeading(icon: Icon(Icons.local_offer_outlined,color: Colors.black,), text: 'Offers',onClicked: ()=>Get.to(OfferView())),
         customLeading(icon: Icon(Icons.notifications,color: Colors.black,), text: 'Notifications'),
         customLeading(icon: Icon(Icons.favorite_border_outlined,color: Colors.black,), text: 'Favorite'),
         customLeading(icon: Icon(Icons.favorite_border_outlined,color: Colors.black,), text: 'Chat Box'),
