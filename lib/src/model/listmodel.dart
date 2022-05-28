@@ -1,7 +1,7 @@
 
 class ListModel{
 
-  String? Image;
+  String? image;
   String? text1;
   String? text2;
   String? text3;
@@ -11,7 +11,7 @@ class ListModel{
 
   ListModel({
   
-    this.Image,
+    this.image,
     this.text1,
     this.text2,
     this.text3,

@@ -1,5 +1,6 @@
 import 'package:dosse/src/model/listmodel.dart';
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class FoodDetails extends StatefulWidget {
   const FoodDetails({Key? key}) : super(key: key);
@@ -19,12 +20,14 @@ class _FoodDetailsState extends State<FoodDetails> {
         body: SingleChildScrollView(
           child: Column(crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 10,),
               Container(margin: EdgeInsets.only(left: 10,right: 10),
                 height: 250,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage('assets\burger.png'),
-                  fit: BoxFit.cover),
+                  image: DecorationImage(image: AssetImage('assets/burger.png'),
+                  fit: BoxFit.fill
+                  ),
                   
                 ),
                 child: Container(
@@ -33,7 +36,7 @@ class _FoodDetailsState extends State<FoodDetails> {
                   child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Icon(Icons.arrow_back,size: 30,),
-                      Icon(Icons.search,size: 30,),
+                  
                     ],
                   ),
                 ),
@@ -94,8 +97,11 @@ class _FoodDetailsState extends State<FoodDetails> {
           Container(
             width: double.infinity,
             height: 50,
-            child: TabBar(isScrollable: true,
-
+            child: TabBar(
+              unselectedLabelColor: Colors.black54,
+              isScrollable: true,
+            labelColor: HexColor('#FE5B00'),
+            indicatorColor: HexColor('#FE5B00'),
               tabs: [
                 Tab(
                   text: "Most Selling",),
@@ -161,37 +167,37 @@ class _MostSellingState extends State<MostSelling> {
   Widget build(BuildContext context) {
      List<ListModel>listview=[
       ListModel(      
-        Image: 'assets\burger.png',
+        image: 'assets/burger.png',
         text1: 'Original Pops',
         text2: 'Mouth-watering original chicken\n Sandwich delicious chipotle pops',
         text3: 'KD 2.500',
         ),
          ListModel(      
-        Image: 'assets\burger.png',
+        image: 'assets/burger.png',
         text1: 'Original Pops',
         text2: 'Mouth-watering original chicken\n Sandwich delicious chipotle pops',
         text3: 'KD 2.500',
         ),
          ListModel(      
-        Image: 'assets\burger.png',
+        image: 'assets/burger.png',
         text1: 'Original Pops',
         text2: 'Mouth-watering original chicken\n Sandwich delicious chipotle pops',
         text3: 'KD 2.500',
         ),
          ListModel(      
-        Image: 'assets\burger.png',
+        image: 'assets/burger.png',
         text1: 'Original Pops',
         text2: 'Mouth-watering original chicken\n Sandwich delicious chipotle pops',
         text3: 'KD 2.500',
         ),
          ListModel(      
-        Image: 'assets\burger.png',
+        image: 'assets/burger.png',
         text1: 'Original Pops',
         text2: 'Mouth-watering original chicken\n Sandwich delicious chipotle pops',
         text3: 'KD 2.500',
         ),
          ListModel(      
-        Image: 'assets\burger.png',
+        image: 'assets/burger.png',
         text1: 'Original Pops',
         text2: 'Mouth-watering original chicken\n Sandwich delicious chipotle pops',
         text3: 'KD 2.500',
@@ -234,7 +240,7 @@ class _MostSellingState extends State<MostSelling> {
             ),    
             ),
           Container(margin: EdgeInsets.only(right: 20),
-            child: Image.asset('${listview.elementAt(index).Image!}',height: 100,width: 100,)
+            child: Image.asset('${listview.elementAt(index).image!}',height: 100,width: 100,)
             ),
                 ],
             ),

@@ -1,9 +1,11 @@
 
 
 import 'package:dosse/src/config/ktext.dart';
+import 'package:dosse/src/pages/setting_page.dart';
 import 'package:dosse/src/widget/custom_leading.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AccountPage extends StatelessWidget {
 
@@ -40,7 +42,9 @@ class AccountPage extends StatelessWidget {
                  ],
                ),
                Spacer(),
-               IconButton(onPressed: (){}, icon: Icon(EvaIcons.settings,),),
+               IconButton(onPressed: (){
+              Get.to(SettingPage());
+               }, icon: Icon(EvaIcons.settings,),),
               ],
             ),
           ),

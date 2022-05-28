@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dosse/src/config/ktext.dart';
+import 'package:dosse/src/pages/detailspage.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -146,6 +147,7 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.black,
               ),
             ),
+            // company advertisement 
             SizedBox(
               width: 450,
               child: CarouselSlider.builder(
@@ -178,25 +180,30 @@ class _HomePageState extends State<HomePage> {
                     width: 10,
                   ),
                   itemBuilder: (context, index) {
-                    return Container(
-                      height: 80,
-                      padding: EdgeInsets.symmetric(horizontal: 15),
-                      width: size.width * 0.45,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        children: [
-                          KText(
-                            text: 'Food',
-                            fontSize: 16,
-                          ),
-                          Image.asset(
-                            'assets/burger.png',
-                            width: 100,
-                          ),
-                        ],
+                    return GestureDetector (
+                      onTap: (){
+                        Get.to(DetailsPage());
+                      },
+                      child: Container(
+                        height: 80,
+                        padding: EdgeInsets.symmetric(horizontal: 15),
+                        width: size.width * 0.45,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Row(
+                          children: [
+                            KText(
+                              text: 'Food',
+                              fontSize: 16,
+                            ),
+                            Image.asset(
+                              'assets/burger.png',
+                              width: 100,
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   },

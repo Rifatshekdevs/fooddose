@@ -1,5 +1,7 @@
 import 'package:dosse/src/model/listmodel.dart';
+import 'package:dosse/src/pages/fooddetails.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
 
@@ -16,7 +18,7 @@ class _DetailsPageState extends State<DetailsPage> {
      List<ListModel>listview=[
       ListModel(
       
-        Image: 'assets\burger.png',
+        image: 'assets/burger.png',
         text1: 'Blaze Pizza',
         text2: 'Pizza Amarican, italian',
         text3: 'Very Good',
@@ -25,7 +27,7 @@ class _DetailsPageState extends State<DetailsPage> {
         
       ),
        ListModel(
-        Image: 'assets\burger.png',
+        image: 'assets/burger.png',
         text1: 'Blaze Pizza',
         text2: 'Pizza Amarican, italian',
         text3: 'Very Good',
@@ -34,7 +36,7 @@ class _DetailsPageState extends State<DetailsPage> {
        
       ),
        ListModel(
-        Image: 'assets\burger.png',
+        image: 'assets/burger.png',
         text1: 'Blaze Pizza',
         text2: 'Pizza Amarican, italian',
         text3: 'Very Good',
@@ -43,7 +45,7 @@ class _DetailsPageState extends State<DetailsPage> {
         
       ),
        ListModel(
-        Image: 'assets\burger.png',
+        image: 'assets/burger.png',
         text1: 'Blaze Pizza',
         text2: 'Pizza Amarican, italian',
         text3: 'Very Good',
@@ -52,7 +54,7 @@ class _DetailsPageState extends State<DetailsPage> {
        
       ),
        ListModel(
-        Image: 'assets\burger.png',
+        image: 'assets/burger.png',
         text1: 'Blaze Pizza',
         text2: 'Pizza Amarican, italian',
         text3: 'Very Good',
@@ -61,7 +63,7 @@ class _DetailsPageState extends State<DetailsPage> {
         
       ),
        ListModel(
-        Image: 'assets\burger.png',
+        image: 'assets/burger.png',
         text1: 'Blaze Pizza',
         text2: 'Pizza Amarican, italian',
         text3: 'Very Good',
@@ -122,7 +124,6 @@ class _DetailsPageState extends State<DetailsPage> {
                         SizedBox(width:10),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, 'list_image');
                         },
                         child: Icon(Icons.format_list_bulleted)),
                    ],
@@ -164,7 +165,7 @@ class _DetailsPageState extends State<DetailsPage> {
        ),
         child: Row(
             children: [SizedBox(width: 10,),
-              Image.asset('${listview.elementAt(index).Image!}',height: 80,width: 80,),
+              Image.asset('${listview.elementAt(index).image!}',height: 80,width: 80,),
               SizedBox(width: 10,),
               Container(padding: EdgeInsets.only(top:15),
     child: Column(crossAxisAlignment: CrossAxisAlignment.start,
@@ -233,33 +234,38 @@ class SliderImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(margin: EdgeInsets.only(left: 20),
-      height: 150,
-      width: 300,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
-        image: DecorationImage(image: AssetImage('assets/images/image1.jpg',),fit: BoxFit.cover),
-         boxShadow: [
-         BoxShadow(
-            color: Colors.grey,
-            offset: const Offset(
-              0.0,
-              0.0,
+       GestureDetector (
+         onTap: (){
+           Get.to(FoodDetails());
+         },
+          child: Container(margin: EdgeInsets.only(left: 20),
+              height: 150,
+              width: 300,
+              decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          image: DecorationImage(image: AssetImage('assets/burger.png',),fit: BoxFit.fill),
+           boxShadow: [
+           BoxShadow(
+              color: Colors.grey,
+              offset: const Offset(
+                0.0,
+                0.0,
+              ),
+              blurRadius: 2.0,
+              spreadRadius: 0.0,
+            ), 
+            BoxShadow(
+              color: Colors.white,
+              offset: const Offset(0.0, 0.0),
+              blurRadius: 0.0,
+              spreadRadius: 0.0,
+            ), 
+           ]
+              ),   
+             
             ),
-            blurRadius: 2.0,
-            spreadRadius: 0.0,
-          ), 
-          BoxShadow(
-            color: Colors.white,
-            offset: const Offset(0.0, 0.0),
-            blurRadius: 0.0,
-            spreadRadius: 0.0,
-          ), 
-         ]
-      ),   
-     
-    ),
+        ),
      SizedBox(height: 10,),
     Column(crossAxisAlignment: CrossAxisAlignment.start,
         children: [
