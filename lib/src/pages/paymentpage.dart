@@ -1,9 +1,7 @@
-import 'package:dosse/src/pages/paymentview.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PaymentPage extends StatefulWidget {
-  const PaymentPage({Key? key}) : super(key: key);
 
   @override
   State<PaymentPage> createState() => _PaymentPageState();
@@ -22,7 +20,7 @@ class _PaymentPageState extends State<PaymentPage> {
             height: 350,
             width: double.infinity,
             decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage('assets/images/image2.jpg'),fit: BoxFit.cover)
+              image: DecorationImage(image: AssetImage('assets/burger.png'),fit: BoxFit.cover)
             ),
           ),
           SizedBox(height: 10,),
@@ -137,5 +135,16 @@ class MyController extends GetxController{
    }else{
        book.value--;
    }
+  }
+  
+}
+
+class ButtonController extends GetxController{
+
+  String _orderType = 'Size';
+  String get orderType=> _orderType;
+  void setOrderType(String type) {
+    _orderType = type;
+    update();
   }
 }

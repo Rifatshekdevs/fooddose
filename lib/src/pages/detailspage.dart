@@ -133,7 +133,8 @@ class _DetailsPageState extends State<DetailsPage> {
              ),
          Container(
            height: 500,
-           child: ListView.builder(
+           child: ListView.separated(
+             separatorBuilder: (context, index) => SizedBox(height: 5,),
        itemCount: listview.length,
        itemBuilder: (context,index){
            return Container(

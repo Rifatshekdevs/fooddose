@@ -1,8 +1,8 @@
 
 
 import 'package:dosse/src/pages/account_page.dart';
+import 'package:dosse/src/pages/card_details.dart';
 import 'package:dosse/src/pages/home_page.dart';
-import 'package:dosse/src/pages/location_page.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -17,7 +17,7 @@ class _BottombarState extends State<Bottombar> {
   int _currentIndex =0;
   final List<Widget> screen=[
     HomePage(),
-    LocationPage(),
+    CardDetails(),
     AccountPage(),
   ];
   @override
@@ -31,7 +31,7 @@ class _BottombarState extends State<Bottombar> {
     currentIndex: _currentIndex,
     items: [
     BottomNavigationBarItem(icon:Icon(EvaIcons.homeOutline),label: 'Home'),
-    BottomNavigationBarItem(icon: Icon(EvaIcons.searchOutline),label: 'Search'),
+    BottomNavigationBarItem(icon: Icon(Icons.add_shopping_cart),label: 'Cart'),
     BottomNavigationBarItem(icon: Icon(EvaIcons.personOutline),label: 'Account'),
   ],
   onTap: (index){

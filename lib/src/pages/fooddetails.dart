@@ -1,5 +1,5 @@
 import 'package:dosse/src/model/listmodel.dart';
-import 'package:dosse/src/pages/paymentview.dart';
+import 'package:dosse/src/pages/paymentpage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';

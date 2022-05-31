@@ -13,42 +13,23 @@ class _CardDetailsState extends State<CardDetails> {
   final MyController c = Get.put(MyController());
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
     List<ListModel>OfferView=[
       ListModel(      
-        image: 'assets/images/image1.jpg',
+        image: 'assets/kabab.jpg',
         text1: 'cart product name',
         text2: '254',
         text3: 'addons: Add on',      
         text4: 'variation: varient',      
       ),
         ListModel(      
-        image: 'assets/images/image1.jpg',
+        image: 'assets/kabab.jpg',
         text1: 'cart product name',
         text2: '254',
         text3: 'addons: Add on',      
         text4: 'variation: varient',      
       ),
-       ListModel(      
-        image: 'assets/images/image1.jpg',
-        text1: 'cart product name',
-        text2: '254',
-        text3: 'addons: Add on',      
-        text4: 'variation: varient',      
-      ),
-       ListModel(      
-        image: 'assets/images/image1.jpg',
-        text1: 'cart product name',
-        text2: '254',
-        text3: 'addons: Add on',      
-        text4: 'variation: varient',      
-      ),
-       ListModel(      
-        image: 'assets/images/image1.jpg',
-        text1: 'cart product name',
-        text2: '254',
-        text3: 'addons: Add on',      
-        text4: 'variation: varient',      
-       )
+   
     ];
    return Scaffold(
      body: SingleChildScrollView(
@@ -60,7 +41,7 @@ class _CardDetailsState extends State<CardDetails> {
                fontSize: 20,fontWeight: FontWeight.bold
              ),),
            ),
-           Container(height: 650,
+           Container(height: 350,
            width: double.infinity,
              child: Expanded(
                child: ListView.builder(
@@ -164,7 +145,7 @@ class _CardDetailsState extends State<CardDetails> {
                  ),
              ),
            ),
-            SizedBox(height: 10,),
+            SizedBox(height: 120,),
 
            Padding(
              padding: const EdgeInsets.only(left: 20,right: 20),
